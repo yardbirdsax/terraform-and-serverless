@@ -59,3 +59,8 @@ resource "postgresql_role" "app_role" {
   password = random_password.app.result
   login = true
 }
+
+resource "postgresql_schema" "app" {
+  name = "app"
+  owner = postgresql_role.app_role.name
+}
