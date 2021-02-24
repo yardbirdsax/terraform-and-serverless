@@ -32,4 +32,9 @@ resource "aws_db_instance" "rds" {
   tags = {
     "deployment" = var.deployment_name
   }
+  publicly_accessible = true
+}
+
+output rds_endpoint {
+  value = aws_db_instance.rds.endpoint
 }
