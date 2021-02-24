@@ -15,3 +15,12 @@ terraform {
 provider aws {
   region = var.aws_region_name
 }
+
+provider "postgresql" {
+  host = aws_db_instance.rds.address
+  port = aws_db_instance.rds.port
+  database = aws_db_instance.rds.name
+  username = local.db_admin_user_name
+  password = random_password.rds.result
+  superuser = false
+}

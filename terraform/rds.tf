@@ -48,3 +48,14 @@ resource "aws_db_instance" "rds" {
 output rds_endpoint {
   value = aws_db_instance.rds.endpoint
 }
+
+resource "random_password" "app" {
+  length = 12
+  special = false
+}
+
+resource "postgresql_role" "app_role" {
+  name = local.db_app_user_name
+  password = random_password.app.result
+  login = true
+}
