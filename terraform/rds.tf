@@ -58,9 +58,19 @@ resource "postgresql_role" "app_role" {
   name = local.db_app_user_name
   password = random_password.app.result
   login = true
+
+  depends_on = [ 
+    aws_db_instance.rds,
+    aws_security_group.rds
+  ]
 }
 
 resource "postgresql_schema" "app" {
   name = "app"
   owner = postgresql_role.app_role.name
+
+  depends_on = [ 
+    aws_db_instance.rds,
+    aws_security_group.rds
+  ]
 }
