@@ -9,5 +9,6 @@ require (
 	github.com/fnproject/fdk-go v0.0.3
 	github.com/ianlopshire/go-ssm-config v1.0.2
 	github.com/lib/pq v1.10.0
+	github.com/sirupsen/logrus v1.8.1 // indirect
 	github.com/tencentyun/scf-go-lib v0.0.0-20200624065115-ba679e2ec9c9
 )
