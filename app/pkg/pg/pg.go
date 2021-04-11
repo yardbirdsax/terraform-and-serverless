@@ -5,7 +5,7 @@ import (
 	_ "github.com/lib/pq"
 )
 
-func ping (db *sql.DB) (err error) {
+func Ping (db *sql.DB) (err error) {
 	err = db.Ping()
 	return err
 }

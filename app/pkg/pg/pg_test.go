@@ -18,7 +18,7 @@ func TestShouldCallPing(t *testing.T) {
 	mock.ExpectPing()
 
 	// Act
-	err = ping(db)
+	err = Ping(db)
 	if err != nil {
 		t.Fatalf("Error occurred while executing ping: '%s'",err)
 	}
