@@ -62,7 +62,8 @@ resource "postgresql_role" "app_role" {
   depends_on = [ 
     aws_db_instance.rds,
     aws_security_group.rds,
-    aws_security_group_rule.rds-ingress
+    aws_security_group_rule.rds-ingress,
+    aws_security_group_rule.rds-egress
   ]
 }
 
