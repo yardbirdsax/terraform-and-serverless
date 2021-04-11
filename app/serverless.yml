@@ -34,7 +34,7 @@ provider:
   iamRoleStatements:
     - Effect: "Allow"
       Action:
-        - "ssm:GetParametersByPath"
+        - "ssm:GetParameters"
       Resource: 
         Fn::Join: 
           - "" 
@@ -43,7 +43,7 @@ provider:
             - ":"
             - Ref: "AWS::AccountId"
             - ":"
-            - parameter/env/app/*"
+            - parameter/env/app/*
 
 # you can define service wide environment variables here
 #  environment:
